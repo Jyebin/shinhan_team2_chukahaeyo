@@ -24,7 +24,7 @@
             receiptList.innerHTML = ''; // 기존 영수증 목록 비우기
             document.querySelectorAll('.card-checkbox:checked').forEach(function (checkbox, index) {
                 let card = checkbox.closest('.card');
-                let cardPrice = card.querySelector('.card-checkbox').value;
+                let cardPrice = card.querySelector('.card-checkbzox').value;
                 let cardText = card.querySelector('.card-text').textContent;
                 receiptList.innerHTML += '<p><span>' + (index + 1) + '&nbsp;&nbsp;&nbsp;&nbsp;' + cardText + '</span> <span style="float: right;">' + parseInt(cardPrice).toLocaleString() + '원</span></p>';
             });
