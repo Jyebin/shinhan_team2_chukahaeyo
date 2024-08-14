@@ -1,4 +1,5 @@
 # 웹 기반 쇼핑몰 구현 프로젝트 - 축하해요
+Web-based Custom Celebration Card Making Shopping Mall
 
 <img width="1512" alt="스크린샷 2024-06-26 오전 11 39 31" src="https://github.com/Jyebin/shinhan_team2_chukahaeyo/assets/108725996/73f2fc1d-8afe-469d-b9ea-0631946ece91">
 
