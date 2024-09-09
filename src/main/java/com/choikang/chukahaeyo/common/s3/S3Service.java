@@ -1,9 +1,5 @@
 package com.choikang.chukahaeyo.common.s3;
 
-import com.amazonaws.SdkClientException;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.DeleteObjectRequest;
-import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.choikang.chukahaeyo.exception.ErrorCode;
 import com.choikang.chukahaeyo.exception.model.CustomException;
 import lombok.RequiredArgsConstructor;
@@ -11,17 +7,21 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.UUID;
-
 
 @Service
 @RequiredArgsConstructor
 public class S3Service {
-    @Value("${cloud.aws.s3.bucket}")
-    private String bucket;
-    private final AmazonS3 amazonS3;
+
+    @Value("${local.file.storage.path}") // application.properties 또는 application.yml에서 설정
+    private String storagePath;
 
     // 파일 유효성 검사
     private String getFileExtension(String fileName) {
@@ -50,31 +50,32 @@ public class S3Service {
         return fileName.substring(fileName.lastIndexOf("."));
     }
 
-    //파일을 S3 bucket에 업로드
+    // 파일을 로컬 디렉토리에 저장
     public String saveFile(MultipartFile file) {
         String fileName = createFileName(file.getOriginalFilename());
-        ObjectMetadata metadata = new ObjectMetadata();
-        metadata.setContentLength(file.getSize());
-        metadata.setContentType(file.getContentType());
+        Path filePath = Paths.get(storagePath, fileName);
 
-        try {
-            amazonS3.putObject(bucket, fileName, file.getInputStream(), metadata);
-        } catch (SdkClientException e) {
-            throw new CustomException(ErrorCode.NOT_FOUND_IMAGE_EXCEPTION, "AWS SDK 클라이언트에서 문제가 발생하였습니다.");
+        try (FileOutputStream fos = new FileOutputStream(new File(filePath.toString()))) {
+            fos.write(file.getBytes());
         } catch (IOException e) {
-            throw new CustomException(ErrorCode.NOT_FOUND_IMAGE_EXCEPTION, "AWS에서 파일 업로드 중 문제가 발생하였습니다.");
+            throw new CustomException(ErrorCode.NOT_FOUND_IMAGE_EXCEPTION, "파일을 로컬에 저장하는 중 문제가 발생하였습니다.");
         }
 
-        String S3Url = amazonS3.getUrl(bucket, fileName).toString();
-        return S3Url; //S3에 저장된 URL을 갖고 오는 로직
+        return filePath.toString(); // 로컬에 저장된 파일 경로 반환
     }
 
-    //파일 이름 중복 방지를 위한 파일명 생성
+    // 파일 이름 중복 방지를 위한 파일명 생성
     private String createFileName(String fileName) {
         return UUID.randomUUID().toString().concat(getFileExtension(fileName));
     }
 
+    // 파일 삭제
     public void deleteFile(String fileName) {
-        amazonS3.deleteObject(new DeleteObjectRequest(bucket, fileName));
+        Path filePath = Paths.get(storagePath, fileName);
+        try {
+            Files.deleteIfExists(filePath);
+        } catch (IOException e) {
+            throw new CustomException(ErrorCode.NOT_FOUND_IMAGE_EXCEPTION, "파일 삭제 중 문제가 발생하였습니다.");
+        }
     }
 }
