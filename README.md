@@ -4,8 +4,9 @@ Web-based Custom Celebration Card Making Shopping Mall
 > **신한 금융SW 아카데미** <br> 2024.05 ~ 2024.06 <br> Spring / JavaScript / HTML, CSS 사용
 
 ### 사진을 클릭하시면 배포 페이지로 이동합니다 👏
+[<img width="1512" alt="로고" src="https://github.com/user-attachments/assets/5420d4b0-d3df-4240-ae59-a34f334b3d2b">](http://13.125.165.147:9090/)
 
-[<img width="1512" alt="스크린샷 2024-06-26 오전 11 39 31" src="https://github.com/user-attachments/assets/d96ed9b9-0830-427a-9f1e-90e71cb13d02">](http://13.125.165.147:9090/)
+
 
 ## Team🐥
 
@@ -34,6 +35,9 @@ Web-based Custom Celebration Card Making Shopping Mall
 * Github Action으로 CI/CD 구축
   - 배포 자동화를 통하여 서버 운용에 용이하도록 설정한다.
 
+<br>
+<br>
+
 ## 주요 기능 📦
 1. **사용자 인증**: Javax.mail library를 활용하여 로그인 및 회원가입, 이메일 인증을 통한 사용자 인증 기능 및 탈퇴, 로그아웃 기능 구현
 2. **인기카드**: 메인페이지에 슬라이더를 적용시켜 실시간으로 인기카드 반영
@@ -48,8 +52,15 @@ Web-based Custom Celebration Card Making Shopping Mall
 11. **보안성** : URL Manipulation 예방, XSS 공격 예방, SQL Injection 예방, 모든 페이지에 Error Page 적용
 
 <br>
+<br>
 
 ## 화면 구성 📺
+
+| 포스터 |
+|---------------------------------------------------------------------------------------------------------------------------------------------|
+| <img width="962" alt="로고" src="https://github.com/user-attachments/assets/453bdaf8-e9a9-458b-8277-619ba03e6977"> |
+
+
 | 메인 페이지 |
 |---------------------------------------------------------------------------------------------------------------------------------------------|
 | <img width="962" alt="메인페이지" src="https://github.com/user-attachments/assets/d21cc39b-2b70-4044-ba8e-b28157e05268"> |
@@ -70,7 +81,7 @@ Web-based Custom Celebration Card Making Shopping Mall
 
 | 명예의 전당 |
 |---------------------------------------------------------------------------------------------------------------------------------------------|
-| <img width="962" alt="명예의전당" src="https://github.com/user-attachments/assets/dddd0e46-ab0f-41ab-8c99-9270080e6ed1"> |
+| <img width="962" alt="명예의전당" src="https://github.com/user-attachments/assets/50fd0d87-8fc5-4e01-b12a-5abf5ee53825"> |
 
 
 
@@ -83,6 +94,8 @@ Web-based Custom Celebration Card Making Shopping Mall
 |---------------------------------------------------------------------------------------------------------------------------------------------|
 | <img width="962" alt="관리자" src="https://github.com/user-attachments/assets/6c571502-b58b-455a-b1ae-0c71fad6e274"> |
 
+<br>
+<br>
 
 ## Stacks 🛠️
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javscript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apache tomcat&logoColor=black"> <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> <img src="https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"> <img src="https://img.shields.io/badge/amazonrds-527FFF?style=for-the-badge&logo=amazonrds&logoColor=white"> <img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazons3&logoColor=white">
@@ -94,6 +107,42 @@ Web-based Custom Celebration Card Making Shopping Mall
 - 서버: Apache Tomcat, Amazon EC2
 - 저장소: Amazon S3
 
+<br>
+<br>
+
 ## Database: ERD
 
 ![image](https://github.com/user-attachments/assets/cf182730-7f64-4ad6-ab2c-17fde6372c49)
+
+<br>
+<br>
+
+## System Process
+
+| 사용자 |
+|---------------------------------------------------------------------------------------------------------------------------------------------|
+| <img width="962" alt="사용자-시스템프로세스" src="https://github.com/user-attachments/assets/e0a0cc23-4d64-4a70-914b-946f3ec33b9e"> |
+
+
+| 관리자 | 방문객 |
+|----------------------------------------------------------------- | --------------------------------------------------------------------------|
+| <img width="462" alt="관리자-시스템프로세스" src="https://github.com/user-attachments/assets/59d310ff-ec54-437b-90ff-163d6cf5c11a"> | <img width="450" alt="방문객-시스템프로세스" src="https://github.com/user-attachments/assets/f7dc90b6-66f5-42f4-9d4d-7a1bda8c245d">
+
+<br>
+<br>
+
+
+## 요구사항 명세서
+
+**사진을 클릭하시면 요구사항 명세서 문서로 이동합니다 🛵**
+
+
+[<img width="962" alt="요구사항명세서" src="https://github.com/user-attachments/assets/b79892d7-b1e9-421d-8e01-8ba4015641f2">](https://docs.google.com/spreadsheets/d/1--0MyNDl91scI1N91rO8lQMw3jEginZ8XHqapVslshA/edit?usp=sharing)
+
+<br>
+<br>
+
+## 유스케이스 다이어그램
+
+<img width="962" alt="유스케이스" src="https://github.com/user-attachments/assets/1a14ad8d-9df6-4d11-a78b-4b2eca6caab1">
+
